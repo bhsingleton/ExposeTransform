@@ -959,6 +959,10 @@ Evaluates the angle between the two matrices.
 
 MVector ExposeTransform::matrixToPosition(const MMatrix& matrix)
 /**
+Extracts the position component from the supplied transform matrix.
+
+@param matrix: The transform matrix to extract from.
+@return: The position value.
 */
 {
 
@@ -977,40 +981,38 @@ Converts the supplied transform matrix into euler angles using the specified axi
 */
 {
 
-	MMatrix normalizedMatrix = ExposeTransform::normalizeMatrix(matrix);
-
 	switch (axisOrder)
 	{
 
 	case AxisOrder::xyz:
-		return ExposeTransform::matrixToEulerXYZ(normalizedMatrix);
+		return ExposeTransform::matrixToEulerXYZ(matrix);
 
 	case AxisOrder::xzy:
-		return ExposeTransform::matrixToEulerXZY(normalizedMatrix);
+		return ExposeTransform::matrixToEulerXZY(matrix);
 
 	case AxisOrder::yzx:
-		return ExposeTransform::matrixToEulerYZX(normalizedMatrix);
+		return ExposeTransform::matrixToEulerYZX(matrix);
 
 	case AxisOrder::yxz:
-		return ExposeTransform::matrixToEulerYXZ(normalizedMatrix);
+		return ExposeTransform::matrixToEulerYXZ(matrix);
 
 	case AxisOrder::zxy:
-		return ExposeTransform::matrixToEulerZXY(normalizedMatrix);
+		return ExposeTransform::matrixToEulerZXY(matrix);
 
 	case AxisOrder::zyx:
-		return ExposeTransform::matrixToEulerZYX(normalizedMatrix);
+		return ExposeTransform::matrixToEulerZYX(matrix);
 
 	case AxisOrder::xyx:
-		return ExposeTransform::matrixToEulerXYX(normalizedMatrix);
+		return ExposeTransform::matrixToEulerXYX(matrix);
 
 	case AxisOrder::yzy:
-		return ExposeTransform::matrixToEulerYZY(normalizedMatrix);
+		return ExposeTransform::matrixToEulerYZY(matrix);
 
 	case AxisOrder::zxz:
-		return ExposeTransform::matrixToEulerZXZ(normalizedMatrix);
+		return ExposeTransform::matrixToEulerZXZ(matrix);
 
 	default:
-		return ExposeTransform::matrixToEulerXYZ(normalizedMatrix);
+		return ExposeTransform::matrixToEulerXYZ(matrix);
 
 	}
 
