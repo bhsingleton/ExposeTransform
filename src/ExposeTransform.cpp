@@ -131,9 +131,9 @@ Only these values should be used when performing computations!
 		MMatrix exposeMatrix = exposeMatrixHandle.asMatrix();
 		MMatrix localReferenceMatrix = localReferenceMatrixHandle.asMatrix();
 
-		AxisOrder eulerXOrder = AxisOrder(eulerXOrderHandle.asInt());
-		AxisOrder eulerYOrder = AxisOrder(eulerYOrderHandle.asInt());
-		AxisOrder eulerZOrder = AxisOrder(eulerZOrderHandle.asInt());
+		AxisOrder eulerXOrder = AxisOrder(eulerXOrderHandle.asShort());
+		AxisOrder eulerYOrder = AxisOrder(eulerYOrderHandle.asShort());
+		AxisOrder eulerZOrder = AxisOrder(eulerZOrderHandle.asShort());
 
 		bool stripNUScale = stripNUScaleHandle.asBool();
 		
